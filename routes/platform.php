@@ -32,15 +32,9 @@ use Tabuna\Breadcrumbs\Trail;
 */
 
 // Main
-Route::screen('/main', PlatformScreen::class)
+Route::screen('/main', FileScreen::class)
     ->name('platform.main');
 
-//File
-Route::screen('file', FileScreen::class)->name('platform.file')->breadcrumbs(function (Trail $trail){
-    return $trail
-        ->parent('platform.index')
-        ->push('File');
-});
 //RecordCount
 Route::screen('record-count', RecordCountScreen::class)->name('platform.record-count')->breadcrumbs(function (Trail $trail){
     return $trail

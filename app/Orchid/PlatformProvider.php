@@ -28,11 +28,6 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            Menu::make('Files')
-                ->icon('monitor')
-                ->route('platform.file')
-                ->title('Files'),
-
             Menu::make('Record Count')
                 ->icon('code')
                 ->route('platform.record-count')
