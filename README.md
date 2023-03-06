@@ -1,4 +1,7 @@
 Need PHP to be installed
+</br>
 To start: run gzip service
+</br>
 type in terminal: php artisan run
- Server running on [http://localhost:8000]
+</br>
+Server running on [http://localhost:8000]
