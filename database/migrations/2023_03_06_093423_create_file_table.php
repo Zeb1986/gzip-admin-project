@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('file', function (Blueprint $table) {
-            $table->id();
-            $table->integer('chunks')->nullable();
-            $table->integer('size')->nullable();
-            $table->integer('duration')->nullable();
-            $table->string('url')->nullable();
-            $table->string('country_code')->nullable();
-            $table->string('ip')->nullable();
-            $table->boolean('success')->nullable();
-            $table->timestamp('created_at')->nullable();
-        });
+//        Schema::create('file', function (Blueprint $table) {
+//            $table->id();
+//            $table->integer('chunks')->nullable();
+//            $table->integer('size')->nullable();
+//            $table->integer('duration')->nullable();
+//            $table->string('url')->nullable();
+//            $table->string('country_code')->nullable();
+//            $table->string('ip')->nullable();
+//            $table->boolean('success')->nullable();
+//            $table->timestamp('created_at')->nullable();
+//        });
     }
 
     /**
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('file');
+//        Schema::dropIfExists('file');
     }
 };

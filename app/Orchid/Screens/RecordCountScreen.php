@@ -3,6 +3,7 @@
 namespace App\Orchid\Screens;
 
 use App\Models\File;
+use App\Models\RecordsCount;
 use Orchid\Screen\Screen;
 use Orchid\Screen\TD;
 use Orchid\Support\Facades\Layout;
@@ -17,7 +18,7 @@ class RecordCountScreen extends Screen
     public function query(): iterable
     {
         return [
-            'recordCount' => (new \App\Models\File)->getRecordCount(),
+            'records_counts' => RecordsCount::renew(), 'records_counts' => RecordsCount::filters()->latest()->paginate(50)
         ];
     }
 
@@ -49,7 +50,7 @@ class RecordCountScreen extends Screen
     public function layout(): iterable
     {
         return [
-            Layout::table('recordCount', [
+            Layout::table('records_counts', [
                 TD::make('date')->sort(),
                 TD::make('count')->sort(),
             ]),
