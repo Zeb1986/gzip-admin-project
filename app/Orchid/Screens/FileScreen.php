@@ -3,7 +3,6 @@
 namespace App\Orchid\Screens;
 
 use App\Models\File;
-use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Screen;
 use Orchid\Screen\TD;
@@ -54,7 +53,7 @@ class FileScreen extends Screen
                 TD::make('chunks')->sort(),
                 TD::make('size')->sort(),
                 TD::make('duration')->sort(),
-                TD::make('url')->sort(),
+                TD::make('url')->sort()->filter(Input::make()),
                 TD::make('country_code')->sort(),
                 TD::make('ip')->sort(),
                 TD::make('success')->sort(),

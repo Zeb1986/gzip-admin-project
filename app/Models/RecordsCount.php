@@ -27,13 +27,5 @@ class RecordsCount extends Model
             ->get();
        DB::table('records_counts')->truncate();
        DB::table('records_counts')->insert($records->toArray());
-//        $this->truncate();
-//        return $this->insert(
-//            DB::table('file')
-//                ->select(DB::raw('DATE(created_at) as date'), DB::raw('COUNT(*) as count'))
-//                ->groupBy('date')
-//                ->get()
-//                ->toArray()
-//        )->get();
     }
 }

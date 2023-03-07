@@ -18,8 +18,6 @@ use Orchid\Screen\AsSource;
  * @property string $ip
  * @property boolean $success
  * @property timestamp $created_at
- * @property string $date
- * @property int $count
  */
 
 class File extends Model
@@ -37,23 +35,7 @@ class File extends Model
         'success',
         'created_at',
     ];
-
-//    public function getDateAttribute()
-//    {
-//        return $this->created_at->format('Y-m-d');
-//    }
-//
-//    public function getCountAttribute()
-//    {
-//        return self::whereDate('created_at', $this->created_at)->count();
-//    }
-
-    public function getRecordCount()
-    {
-        return $this
-            ->select(DB::raw('DATE(created_at) as date'), DB::raw('COUNT(*) as count'))
-            ->groupBy('date')
-            ->get();
-    }
-
+    protected $allowedFilters = [
+        'url',
+    ];
 }
